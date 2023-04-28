@@ -7,6 +7,8 @@ plugins:
 - "semantic-release-python":
     setupPy: "./pyproject.toml"
     pypiPublish: true
+- "@semantic-release/github":
+    assets: ["./pyproject.toml"]
 
 
 prepare:
@@ -14,7 +16,6 @@ prepare:
 verifyConditions: "@semantic-release/github"
 publish:
   - "@semantic-release/github"
-  - "semantic-release-python"
 analyzeCommits:
   releaseRules:
   - type: fix
