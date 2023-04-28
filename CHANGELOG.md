@@ -1,3 +1,5 @@
+## [1.10.5](https://github.com/gridivit/ttt_semver/compare/v1.10.4...v1.10.5) (2023-04-28)
+
 ## [1.10.4](https://github.com/gridivit/ttt_semver/compare/v1.10.3...v1.10.4) (2023-04-28)
 
 ## [1.10.3](https://github.com/gridivit/ttt_semver/compare/v1.10.2...v1.10.3) (2023-04-28)
