@@ -28,7 +28,7 @@ plugins:
 - "@semantic-release/changelog":
     "changelogFile": "CHANGELOG.md"
 - "@semantic-release/git":
-    assets: ["*.toml", "CHANGELOG.md"]
+    assets: ["*", "CHANGELOG.md"]
 - "@semantic-release/github":
     assets: [ "./pyproject.toml" ]
 
