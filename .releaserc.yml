@@ -4,11 +4,9 @@ debug: true
 plugins:
 - "@semantic-release/commit-analyzer"
 - "@semantic-release/release-notes-generator"
-- - semantic-release-python
+- - "semantic-release-python"
   - setupPy: "./pyproject.toml"
     pypiPublish: false
-- - @semantic-release/github
-  - assets: [pyproject.toml]
 
 verifyConditions: "@semantic-release/github"
 publish: "@semantic-release/github"
@@ -32,3 +30,47 @@ analyzeCommits:
     release: major
   - type: chore
     release: patch
+
+generateNotes:
+  - path: '@semantic-release/release-notes-generator'
+    writerOpts:
+      groupBy: 'type'
+      commitGroupsSort: 'title'
+      commitsSort: 'header'
+    linkCompare: true
+    linkReferences: true
+    presetConfig:
+      types:  # looks like it only works with 'conventionalcommits' preset
+        - type: 'build'
+          section: '🦊 CI/CD'
+          hidden: false
+        - type: 'chore'
+          section: 'Other'
+          hidden: false
+        - type: 'ci'
+          section: '🦊 CI/CD'
+          hidden: false
+        - type: 'docs'
+          section: '📔 Docs'
+          hidden: false
+        - type: 'example'
+          section: '📝 Examples'
+          hidden: false
+        - type: 'feat'
+          section: '🚀 Features'
+          hidden: false
+        - type: 'fix'
+          section: '🛠 Fixes'
+          hidden: false
+        - type: 'perf'
+          section: '⏩ Performance'
+        - type: 'refactor'
+          section: ':scissors: Refactor'
+          hidden: false
+        - type: 'revert'
+          section: '🙅‍♂️ Reverts'
+        - type: 'style'
+          section: '💈 Style'
+        - type: 'test'
+          section: '🧪 Tests'
+          hidden: false
