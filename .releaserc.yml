@@ -4,8 +4,8 @@ debug: true
 plugins:
 - "@semantic-release/commit-analyzer"
 - "@semantic-release/release-notes-generator"
-- - "semantic-release-python"
-  - setupPy: "./pyproject.toml"
+- "semantic-release-python":
+    setupPy: "./pyproject.toml"
     pypiPublish: false
 
 verifyConditions: "@semantic-release/github"
