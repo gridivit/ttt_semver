@@ -7,6 +7,8 @@ plugins:
 - - semantic-release-python
   - setupPy: "./pyproject.toml"
     pypiPublish: false
+- - @semantic-release/github
+  - assets: [pyproject.toml]
 
 verifyConditions: "@semantic-release/github"
 publish: "@semantic-release/github"
