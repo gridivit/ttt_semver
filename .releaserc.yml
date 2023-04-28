@@ -1,0 +1,32 @@
+branches:
+- main
+debug: true
+plugins:
+- "@semantic-release/commit-analyzer"
+- "@semantic-release/release-notes-generator"
+- - semantic-release-python
+  - setupPy: "./pyproject.toml"
+    pypiPublish: false
+
+verifyConditions: "@semantic-release/github"
+publish: "@semantic-release/github"
+analyzeCommits:
+  releaseRules:
+  - type: fix
+    release: patch
+  - type: perf
+    release: patch
+  - type: refactor
+    release: patch
+  - type: build
+    release: patch
+  - type: ci
+    release: patch
+  - type: feat
+    release: minor
+  - type: feature
+    release: minor
+  - type: breaking
+    release: major
+  - type: chore
+    release: patch
