@@ -28,7 +28,7 @@ plugins:
 - "@semantic-release/changelog":
     "changelogFile": "CHANGELOG.md"
 - "@semantic-release/git":
-    assets: ["pyproject.toml", "CHANGELOG.md", "!package.json", "!package-lock.json"]
+    assets: ["pyproject.toml", "!package.json", "!package-lock.json"]
     message: "TTTTT chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
 - "@semantic-release/github":
     assets: [ "./pyproject.toml" ]
@@ -37,6 +37,7 @@ plugins:
 verifyConditions:
   - "@semantic-release/changelog"
   - "@semantic-release/git"
+  - "@semantic-release/github"
 
 analyzeCommits:
   - "@semantic-release/commit-analyzer"
