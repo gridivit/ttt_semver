@@ -6,10 +6,11 @@ plugins:
 - "@semantic-release/release-notes-generator"
 - "semantic-release-python":
     setupPy: "./pyproject.toml"
-    pypiPublish: false
+    pypiPublish: true
 
 
-prepare: "semantic-release-python"
+prepare:
+  - "semantic-release-python"
 verifyConditions: "@semantic-release/github"
 publish: "@semantic-release/github"
 analyzeCommits:
