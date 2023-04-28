@@ -8,6 +8,8 @@ plugins:
     setupPy: "./pyproject.toml"
     pypiPublish: false
 
+
+prepare: "semantic-release-python"
 verifyConditions: "@semantic-release/github"
 publish: "@semantic-release/github"
 analyzeCommits:
