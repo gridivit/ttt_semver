@@ -38,3 +38,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
+
+      - name: rrr
+        run: ls -l
+
+      - name: rrr
+        run: cat pyproject.toml
+
+      - name: rrr
+        run: cat CHANGELOG.md
