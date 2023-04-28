@@ -12,7 +12,9 @@ plugins:
 prepare:
   - "semantic-release-python"
 verifyConditions: "@semantic-release/github"
-publish: "@semantic-release/github"
+publish:
+  - "@semantic-release/github"
+  - "semantic-release-python"
 analyzeCommits:
   releaseRules:
   - type: fix
@@ -44,36 +46,30 @@ generateNotes:
     linkReferences: true
     presetConfig:
       types:  # looks like it only works with 'conventionalcommits' preset
-        - type: 'build'
-          section: '🦊 CI/CD'
-          hidden: false
-        - type: 'chore'
-          section: 'Other'
-          hidden: false
-        - type: 'ci'
-          section: '🦊 CI/CD'
-          hidden: false
-        - type: 'docs'
-          section: '📔 Docs'
-          hidden: false
-        - type: 'example'
-          section: '📝 Examples'
-          hidden: false
-        - type: 'feat'
-          section: '🚀 Features'
-          hidden: false
-        - type: 'fix'
-          section: '🛠 Fixes'
-          hidden: false
-        - type: 'perf'
-          section: '⏩ Performance'
-        - type: 'refactor'
-          section: ':scissors: Refactor'
-          hidden: false
-        - type: 'revert'
-          section: '🙅‍♂️ Reverts'
-        - type: 'style'
-          section: '💈 Style'
-        - type: 'test'
-          section: '🧪 Tests'
-          hidden: false
+      - type: fix
+        release: patch
+        hidden: false
+      - type: perf
+        release: patch
+        hidden: false
+      - type: refactor
+        release: patch
+        hidden: false
+      - type: build
+        release: patch
+        hidden: false
+      - type: ci
+        release: patch
+        hidden: false
+      - type: feat
+        release: minor
+        hidden: false
+      - type: feature
+        release: minor
+        hidden: false
+      - type: breaking
+        release: major
+        hidden: false
+      - type: chore
+        release: patch
+        hidden: false
