@@ -1,7 +1,7 @@
 branches:
-- main
+- name: main
 - name: "PF-[0-9]*"
-  channel: beta
+  channel: b
   prerelease: true
 debug: true
 plugins:
