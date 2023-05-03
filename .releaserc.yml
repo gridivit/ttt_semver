@@ -2,7 +2,7 @@ branches:
 - name: main
 - name: "PF-[0-9]*"
   channel: b
-  prerelease: true
+  prerelease: b
 debug: true
 plugins:
 - "@semantic-release/commit-analyzer":
