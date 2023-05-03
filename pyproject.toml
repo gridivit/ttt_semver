@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "qa-automation"
-version = "1.10.10"
+version = "1.10.11"
 repository = "https://github.com/gridivit/ttt_semver"
 description = ""
 authors = ["Vitaliy Gridin"]
