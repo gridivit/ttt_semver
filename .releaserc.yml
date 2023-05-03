@@ -1,5 +1,8 @@
 branches:
 - main
+- name: "PF-[0-9]*"
+  channel: beta
+  prerelease: true
 debug: true
 plugins:
 - "@semantic-release/commit-analyzer":
@@ -23,13 +26,11 @@ plugins:
     - type: chore
       release: patch
 - "@semantic-release/release-notes-generator"
-- "semantic-release-python":
-    setupPy: "./pyproject.toml"
 - "@semantic-release/changelog":
     "changelogFile": "CHANGELOG.md"
-#- "@semantic-release/git":
-#    assets: ["pyproject.toml", "!package.json", "!package-lock.json"]
-#    message: "TTTTT chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+- "@semantic-release/git":
+    assets: ["pyproject.toml", "!package.json", "!package-lock.json"]
+    message: "TTTTT chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
 - "@semantic-release/github":
     assets: [ "./pyproject.toml" ]
 
@@ -44,10 +45,7 @@ analyzeCommits:
 
 prepare:
   - path: "@semantic-release/changelog"
-  - path: "semantic-release-python"
   - path: "@semantic-release/git"
-    message: "TTTTT chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-    assets: ["pyproject.toml", "!package.json", "!package-lock.json"]
 
 publish:
   - "@semantic-release/github"
